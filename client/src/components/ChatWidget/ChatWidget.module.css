@@ -1,16 +1,16 @@
 .header {
     height: 10%;
-    background-color: #61dafb;;
+    background-color: #61dafb;
+    text-align: center;
 }
 
 .body {
     background-color: #b5d1d8;
     overflow-y: auto;
-    height: 80%;
+    height: 77%;
+    padding: 5px;
 }
 
 .input {
-    background-color: #3c6e2d;
-    overflow-y: hidden;
-    height: 10%;
+    height: 12%;
 }
