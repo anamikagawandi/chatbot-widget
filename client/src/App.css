@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
@@ -27,12 +29,13 @@
 
 .widget {
   z-index: 4;
-  height: 20em;
   background: white;
-  width: 20em;
   position: absolute;
   bottom: 1em;
   right: 2em;
+  border-radius: 0.5em;
+  height: 40%;
+  width: 30%;
 }
 
 .App-link {
@@ -46,4 +49,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.3);
 }

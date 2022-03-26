@@ -1,0 +1,16 @@
+.header {
+    height: 10%;
+    background-color: #61dafb;;
+}
+
+.body {
+    background-color: #b5d1d8;
+    overflow-y: auto;
+    height: 80%;
+}
+
+.input {
+    background-color: #3c6e2d;
+    overflow-y: hidden;
+    height: 10%;
+}
