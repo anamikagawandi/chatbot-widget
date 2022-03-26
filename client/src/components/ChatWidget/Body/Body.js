@@ -3,29 +3,17 @@ import { Input } from 'antd';
 const { TextArea } = Input;
 
 const Body = (props) => {
-    const { styles } = props;
-    const conversation = [{
-        type: "user",
-        message: "Hi",
-        timeStamp: 10
-    },
-    {
-        type: "bot",
-        message: "Hello user",
-        timeStamp: 9
-    },
-    {
-        type: "user",
-        message: "I need help with cancellation of job",
-        timeStamp: 8
-    }
-    ]
+    const { styles, conversation } = props;
+
+    console.log(conversation);
+
     return (<div className={styles.body}>
-        {conversation.map((message) => (
+        {conversation.length > 0 && conversation.map((message) => (
             <div className={message.type === "user" ? style.user : style.bot}>
                 <TextArea
                     placeholder={message.message}
                     autoSize={{ minRows: 1 }}
+                    disabled={true}
                 />
                 <div className={style.space}/>
             </div>
