@@ -1,5 +1,4 @@
 .header {
-    height: 10%;
     background-color: #61dafb;
     text-align: center;
 }
@@ -9,8 +8,8 @@
     overflow-y: auto;
     height: 77%;
     padding: 5px;
+    flex: auto;
 }
 
 .input {
-    height: 12%;
 }

@@ -1,23 +1,41 @@
+import React, { useEffect, useRef, useState } from 'react';
 import style from './Body.module.css';
 import { Input } from 'antd';
 const { TextArea } = Input;
 
 const Body = (props) => {
-    const { styles, conversation } = props;
+    const { styles, message } = props;
 
-    console.log(conversation);
+    const [conversation, setConversation] = useState([]);
+
+    const messagesEndRef = useRef(null);
+
+    useEffect(() => {
+        if (message) {
+            setConversation([...conversation, message]);
+        }
+    }, [message]);
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [conversation]);
+
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (<div className={styles.body}>
         {conversation.length > 0 && conversation.map((message) => (
-            <div className={message.type === "user" ? style.user : style.bot}>
+            <div className={message.type === "user" ? style.user : style.bot} ref={messagesEndRef}>
                 <TextArea
                     placeholder={message.message}
                     autoSize={{ minRows: 1 }}
                     disabled={true}
                 />
-                <div className={style.space}/>
+                <div className={style.space} />
             </div>
         ))}
+
     </div>);
 };
 

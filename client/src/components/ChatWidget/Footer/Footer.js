@@ -10,19 +10,21 @@ const Footer = (props) => {
 
     const [textInput, setTextInput] = useState("");
 
-    const sendMessage = (event) => {
-        setMessage({
-            type: "user",
-            message: textInput,
-            timeStamp: new Date().getTime()
-        });
-        console.log(event);
+    const sendMessage = () => {
+        if(textInput.length > 0) {
+            setMessage({
+                type: "user",
+                message: textInput,
+                timeStamp: new Date().getTime()
+            });
+            setTextInput("");
+        }
     }
 
     return (<div className={styles.input}>
         <Input.Group compact>
-            <Input style={{ width: 'calc(100% - 8%)' }} onChange={(e) => setTextInput(e.target.value)} onPressEnter={sendMessage}/>
-            <Button type="primary" icon={<SendOutlined />} onClick={sendMessage} />
+            <Input value={textInput} style={{ width: 'calc(100% - 8%)' }} onChange={(e) => setTextInput(e.target.value)} onPressEnter={sendMessage}/>
+            <Button disabled={textInput.length <= 0} type="primary" icon={<SendOutlined />} onClick={sendMessage} />
         </Input.Group>
     </div>);
 };
