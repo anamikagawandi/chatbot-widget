@@ -1,0 +1,17 @@
+.space {
+    height: 10px;
+}
+
+.user {
+    float: right;
+    width: 70%;
+    border-radius: 5px;
+    margin-right: 1em;
+}
+
+.bot {
+    float: left;
+    width: 70%;
+    border-radius: 5px;
+    margin-left: 1em;
+}
