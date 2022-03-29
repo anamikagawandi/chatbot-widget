@@ -28,6 +28,7 @@ const Footer = (props) => {
     useEffect(() => {
         client.onopen = () => {
             console.log('WebSocket Client Connected');
+            client.send("Hi");
           };
           client.onmessage = (message) => {
             const reply = JSON.parse(message.data).message;

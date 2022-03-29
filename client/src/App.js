@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import 'antd/dist/antd.css';
 import ChatWidget from './components/ChatWidget/ChatWidget';
 

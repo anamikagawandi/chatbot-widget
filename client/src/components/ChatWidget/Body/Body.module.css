@@ -6,12 +6,12 @@
     float: right;
     width: 70%;
     border-radius: 5px;
-    padding-right: 1em;
+    margin-right: 1em;
 }
 
 .bot {
     float: left;
     width: 70%;
     border-radius: 5px;
-    padding-left: 1em;
+    margin-left: 1em;
 }
