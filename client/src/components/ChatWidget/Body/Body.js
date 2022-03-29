@@ -26,7 +26,7 @@ const Body = (props) => {
 
     return (<div className={styles.body}>
         {conversation.length > 0 && conversation.map((message) => (
-            <div className={message.type === "user" ? style.user : style.bot} ref={messagesEndRef}>
+            <div key={message.timeStamp} className={message.type === "user" ? style.user : style.bot} ref={messagesEndRef}>
                 <TextArea
                     className="message"
                     value={message.message}
