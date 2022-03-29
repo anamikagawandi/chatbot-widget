@@ -28,7 +28,8 @@ const Body = (props) => {
         {conversation.length > 0 && conversation.map((message) => (
             <div className={message.type === "user" ? style.user : style.bot} ref={messagesEndRef}>
                 <TextArea
-                    placeholder={message.message}
+                    className="message"
+                    value={message.message}
                     autoSize={{ minRows: 1 }}
                     disabled={true}
                 />
