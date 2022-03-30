@@ -29,10 +29,10 @@ wsServer.on('request', (request) => {
     const query = message.utf8Data;
 
     let response = null;
-    if(query === 'Hi') response = 'I share facts related to Cats... Meow!';
+    if(query === 'Hi') response = 'I will translate your text to klingon!';
     else {
-      const apiResponse = await getResponse();
-      response = apiResponse.data.fact;
+      const apiResponse = await getResponse(query);
+      response = apiResponse.data.contents.translated;
     }
 
     connection.sendUTF(JSON.stringify({ message:  response }));
@@ -44,6 +44,6 @@ wsServer.on('request', (request) => {
 });
 
 
-const getResponse = () => {
-  return axios.get(url);
+const getResponse = (message) => {
+  return axios.post(url, { text: message });
 };

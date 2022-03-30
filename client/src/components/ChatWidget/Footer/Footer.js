@@ -43,8 +43,8 @@ const Footer = (props) => {
     }, []);
 
     return (<div className={styles.input}>
-        <Input.Group compact>
-            <Input value={textInput} style={{ width: 'calc(100% - 8%)' }} onChange={(e) => setTextInput(e.target.value)} onPressEnter={sendMessage}/>
+        <Input.Group className={styles.footer} compact>
+            <Input value={textInput} onChange={(e) => setTextInput(e.target.value)} onPressEnter={sendMessage}/>
             <Button disabled={textInput.length <= 0} type='primary' icon={<SendOutlined />} onClick={sendMessage} />
         </Input.Group>
     </div>);
