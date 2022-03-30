@@ -45,6 +45,11 @@
   justify-content: space-between;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -87,4 +92,15 @@
   color: white !important;
   border-radius: 5px !important;
   cursor: default !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="widget"] {
+    width: calc(100% - 1em);
+    height: 90%;
+    right: 0.5em;
+    left: 0.5em;
+  }
 }
