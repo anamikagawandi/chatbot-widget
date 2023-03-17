@@ -1,2 +1,2 @@
 # chatbot-widget
-Chatbot widget
+Chatbot Widget
